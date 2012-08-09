@@ -1,0 +1,25 @@
+#congrats {
+}
+
+.scored {
+}
+
+@media (max-width: 480px) {
+    #congrats {
+    }
+
+    .scored {
+    }
+
+    .answer {
+        -webkit-text-stroke: 5px #011e62; 
+    }
+
+    #footer, #footer a, #footer a:hover, #footer a:visited {
+        color: #cc253f;
+        text-shadow: 0px 2px 3px #8a061b;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+

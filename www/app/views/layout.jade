@@ -1,0 +1,50 @@
+doctype 5
+html
+  head
+    title=title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/styles.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/styles-en.css', type='text/css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Patua+One', type='text/css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='Did Scott Gomez Score Last Night/Game?')
+    meta(charset='utf-8')
+    meta(property='og:title', content='Did Scott Gomez Score Last Game?')
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='http:/didgomezscore.com')
+    meta(property='og:image', content='http:/didgomezscore.com/gomez.png')
+    meta(property='og:site_name', content='Did Scott Gomez Score Last Game?')
+    meta(property='fb:admins', content='1252352623')
+    meta(property='og:description', content='Did Scott Gomez score last game? Find out now!')
+  body(class='red')
+    block content
+    #fb-root
+      script(type='text/javascript')
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id))
+            return; 
+          js = d.createElement(s); 
+          js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=316542338389694";
+          fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+
+    script(type='text/javascript')
+      //google analytics code
+      var _gaq = _gaq || []; 
+      _gaq.push(['_setAccount', 'UA-28519444-1']); 
+      _gaq.push(['_trackPageview']); 
+      
+      (function() { 
+          var ga = document.createElement('script'); 
+          ga.type = 'text/javascript'; 
+          ga.async = true; 
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; 
+          var s = document.getElementsByTagName('script')[0]; 
+          s.parentNode.insertBefore(ga, s); 
+      })(); 
+
+    include includes/footer

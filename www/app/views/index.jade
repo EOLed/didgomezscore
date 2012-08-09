@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  .container
+    .row
+      .span12
+        h1 Did Scott Gomez Score Last Game?
+          small#now
+            a#locale-switcher.header-link(href='/fr') Et pis maintenant?
+    .row
+      .span8.answer.didnt-score No.
+      #countup.span4
+    .row.social
+      #social-facebook.span8
+        .fb-like(data-href='http://didgomezscore.com', data-send='true', data-width='620', 
+          data-show-faces='true')
+      #social-twitter.span4
+        a.twitter-share-button(href='https://twitter.com/share', data-url='http://didgomezscore.com',
+          data-text='Let\'s reminise about the last time Gomez scored!',
+          data-hashtags='LastTimeGomezScored') Tweet
+        script(type='text/javascript')
+          !function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (!d.getElementById(id)) {
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "//platform.twitter.com/widgets.js";
+              fjs.parentNode.insertBefore(js,fjs);
+            }
+          } (document,"script","twitter-wjs");
+
+  include includes/ads      
+
+  .container
+    .row
+      h2.span12 Reminiscing...
+    .row
+      #last-goal-description.span12
+        On February 17, Scott Gomez doubles his season goal total with a powerplay marker near the end of the
+        first period.
+    .row
+      #last-goal-showcase.span12
+        iframe(id='last-goal-youtube', align='center', width='100%', height='480',
+          src='http://www.youtube.com/embed/C6Rf3QxAK8E?rel=0', frameborder='0', allowfullscreen)
+
+  include includes/ads      
+
+  .container
+    .row
+      h2.span12 Anticipation...
+
+  script(type='text/javascript', src='/javascripts/jquery.countdown.min.js')
+  script(type='text/javascript', src='/javascripts/jshashtable-2.1.js')
+  script(type='text/javascript', src='/javascripts/jquery.numberformatter-1.2.2.min.js')
+  script(type='text/javascript')
+    var lastGoal = new Date(Date.UTC(2012, 1, 17, 20, 18));

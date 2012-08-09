@@ -1,0 +1,177 @@
+@-moz-document url-prefix() {
+    .answer {
+        color: white; 
+        text-shadow: 10px 5px 0px #011e62;
+        margin-top: 20px;
+    }
+    .scored {
+        margin-top: 40px;
+    }
+}
+
+.answer {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    font-family: sans-serif;
+    line-height: normal;
+    font-size: 300px;
+    -webkit-text-stroke: 10px #011e62; 
+}
+
+.scored {
+    font-size: 250px;
+}
+
+@media (max-width: 480px) {
+    #congrats {
+        margin-top: 20px;
+    }
+
+    .scored {
+        font-size: 180px;
+    }
+
+    #countup, #whatevz {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .tweet div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .tweet-pic {
+        padding-top: 10px;
+    }
+
+    .tweet-desc {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .answer {
+        -webkit-text-stroke: 7px #011e62; 
+        font-size: 200px;
+    }
+
+    .scored {
+        -webkit-text-stroke: 5px #011e62; 
+        font-size: 120px;
+    }
+ /*   .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }*/
+}
+
+@media (max-width: 768px) {
+    #congrats {
+        margin-top: 20px;
+    }
+
+    #countup, #whatevz {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    .tweet div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .tweet-pic {
+        padding-top: 10px;
+    }
+
+    .tweet-desc {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .answer {
+        -webkit-text-stroke: 7px #011e62; 
+        font-size: 160px;
+
+    }
+
+    .scored {
+        -webkit-text-stroke: 5px #011e62; 
+        font-size: 120px;
+    }
+
+    #countup {
+        font-size: 20px;
+    }
+
+    /*.mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }*/
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    #congrats {
+        margin-top: 20px;
+    }
+
+    #countup {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .answer {
+        -webkit-text-stroke: 7px #011e62; 
+        font-size: 230px;
+    }
+
+    .scored {
+        font-size: 215px;
+    }
+
+    /*.mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }*/
+}
+
+@media (min-width: 980px) {
+    /*.mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }*/
+}
+
+@media (min-width: 1200px) {
+    #congrats {
+        margin-top: 60px;
+    }
+    .answer {
+        font-size: 330px;
+    }
+    .scored {
+        font-size: 300px;
+    }
+    /*.mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }*/
+}
+
+
