@@ -54,3 +54,9 @@ block content
   script(type='text/javascript', src='/javascripts/jquery.numberformatter-1.2.2.min.js')
   script(type='text/javascript')
     var lastGoal = new Date(Date.UTC(2012, 1, 17, 20, 18));
+    $("#countup").countdown({
+        format: "YdHMS",
+        since: lastGoal,
+        layout: 'Only {d<}{dn} {dl},{d>} {hn} {hl}, {mn} {ml} and {sn} {sl} {desc}',
+        description: 'since <span id="name">Gomez\'s</span> last goal...'
+    });

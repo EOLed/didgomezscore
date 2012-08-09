@@ -17,6 +17,7 @@ html
     meta(property='og:site_name', content='Did Scott Gomez Score Last Game?')
     meta(property='fb:admins', content='1252352623')
     meta(property='og:description', content='Did Scott Gomez score last game? Find out now!')
+    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
   body(class='red')
     block content
     #fb-root
@@ -29,8 +30,6 @@ html
           js.id = id;
           js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=316542338389694";
           fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
-
-    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
 
     script(type='text/javascript')
       //google analytics code
