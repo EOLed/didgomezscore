@@ -4,9 +4,9 @@ block content
   .container
     .row
       .span12
-        h1 Did Scott Gomez Score Last Game?
+        h1 #{__i('Did Scott Gomez Score Last Game?')}
           small#now
-            a#locale-switcher.header-link(href='/fr') Et pis maintenant?
+            a#locale-switcher.header-link(href='/fr') &nbsp;#{__i('Et pis maintenant?')}
     .row
       .span8.answer.didnt-score No.
       #countup.span4
@@ -33,11 +33,9 @@ block content
 
   .container
     .row
-      h2.span12 Reminiscing...
+      h2.span12 #{__i('Reminiscing...')}
     .row
-      #last-goal-description.span12
-        On February 17, Scott Gomez doubles his season goal total with a powerplay marker near the end of the
-        first period.
+      #last-goal-description.span12 #{__i('last.goal.desc')}
     .row
       #last-goal-showcase.span12
         iframe(id='last-goal-youtube', align='center', width='100%', height='480',
@@ -47,16 +45,16 @@ block content
 
   .container
     .row
-      h2.span12 Anticipation...
+      h2.span12 #{__i('Anticipation...')}
 
   script(type='text/javascript', src='/javascripts/jquery.countdown.min.js')
   script(type='text/javascript', src='/javascripts/jshashtable-2.1.js')
   script(type='text/javascript', src='/javascripts/jquery.numberformatter-1.2.2.min.js')
   script(type='text/javascript')
     var lastGoal = new Date(Date.UTC(2012, 1, 17, 20, 18));
-    $("#countup").countdown({
-        format: "YdHMS",
+    $('#countup').countdown({
+        format: 'YdHMS',
         since: lastGoal,
-        layout: 'Only {d<}{dn} {dl},{d>} {hn} {hl}, {mn} {ml} and {sn} {sl} {desc}',
-        description: 'since <span id="name">Gomez\'s</span> last goal...'
+        layout: '!{__i('countup.prefix')}',
+        description: '!{__i('countup.suffix')}'
     });
