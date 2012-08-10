@@ -32,6 +32,7 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/:locale', routes.locale);
 
 app.locals({
   __i: i18n.__,

@@ -5,8 +5,8 @@ block content
     .row
       .span12
         h1 #{__i('Did Scott Gomez Score Last Game?')}
-          small#now
-            a#locale-switcher.header-link(href='/fr') &nbsp;#{__i('Et pis maintenant?')}
+          small#now &nbsp;
+            a#locale-switcher.header-link(href='/#{otherLocale}') #{__i('Et pis maintenant?')}
     .row
       .span8.answer.didnt-score No.
       #countup.span4
