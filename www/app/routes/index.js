@@ -6,14 +6,17 @@ var i18n = require('i18n');
 
 exports.index = function(req, res){
   var cookies = {};
+  var locale = null;
   req.headers.cookie && req.headers.cookie.split(';').forEach(function( cookie ) {
     var parts = cookie.split('=');
     cookies[ parts[ 0 ].trim() ] = ( parts[ 1 ] || '' ).trim();
+    locale = _locale(cookies['locale']);
+    i18n.setLocale(locale);
   });
 
-  console.log('locale from cookie: ' + cookies['locale']);
+  console.log('locale from cookie: ' + locale);
 
-  res.render('index', { otherLocale: _otherLocale(cookies['locale']) });
+  res.render('index', { otherLocale: _otherLocale(locale) });
 };
 
 exports.locale = function(req, res) {
