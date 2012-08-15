@@ -1,14 +1,16 @@
 extends layout
 
 block content
+  include includes/top_ads
+
   .container
     .row
       .span12
-        h1 #{__i('Did Scott Gomez Score Last Game?')}
-          small#now &nbsp;
+        h1 #{__i('Did Scott Gomez Score Last Game?') + ' '}
+          small#now
             a#locale-switcher.header-link(href='/#{otherLocale}') #{__i('Et pis maintenant?')}
     .row
-      .span8.answer.didnt-score No.
+      .span8.answer.didnt-score #{__i('No.')}
       #countup.span4
     .row.social
       #social-facebook.span8

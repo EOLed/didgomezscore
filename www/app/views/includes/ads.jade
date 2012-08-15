@@ -1,9 +1,10 @@
 .new-section.desktop.ads
-  script(type='text/javascript')
-    google_ad_client = "ca-pub-3618440658775904";
-    /* medium mobile */
-    google_ad_slot = "1989771843";
-    google_ad_width = 300;
-    google_ad_height = 250;
-    //-->
-  script(type='text/javascript', src='http://pagead2.googlesyndication.com/pagead/show_ads.js')
+  if config['ads']
+    script(type='text/javascript')
+      google_ad_client = "ca-pub-3618440658775904";
+      /* medium mobile */
+      google_ad_slot = "1989771843";
+      google_ad_width = 300;
+      google_ad_height = 250;
+      //-->
+    script(type='text/javascript', src='http://pagead2.googlesyndication.com/pagead/show_ads.js')
