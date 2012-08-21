@@ -9,7 +9,7 @@ var express = require('express'),
   i18n = require('i18n');
 
 i18n.configure({
-  locales: ['fr','en']
+  locales: ['en','fr']
 });
 
 var app = express();

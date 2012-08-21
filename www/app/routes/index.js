@@ -38,17 +38,13 @@ function _loadConfig(res, locale, callback) {
 
   var multi = redisClient.multi();
 
-  console.log('multi: ' + multi);
-
   multi.get('dgs:config:ads', function (err, reply) {
-    console.log("get ads");
     if (err) return;
 
     ads = reply == 'true' ? true : false;
   });
 
   multi.get('dgs:config:scored', function (err, reply) {
-    console.log("get scored");
     if (err) return;
 
     if (reply == 'true') {
@@ -75,7 +71,7 @@ function _configLoaded(res, locale, config) {
 }
 
 function _otherLocale(locale) {
-  return locale != 'en' ? 'en' : 'fr';
+  return locale == 'fr' ? 'en' : 'fr';
 }
 
 function _locale(locale) {
