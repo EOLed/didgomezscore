@@ -67,7 +67,20 @@ function _loadConfig(res, locale, callback) {
 }
 
 function _configLoaded(res, locale, config) {
-  res.render('index', { otherLocale: _otherLocale(locale), config: config });
+  var redis = require('redis');
+  var redisClient = redis.createClient();
+  redisClient.on('error', function (err) {
+    console.error('There was an Error ' + err);
+  });
+
+  redisClient.get('dgs:tweets', function(err, reply) {
+    _tweetsLoaded(res, locale, config, JSON.parse(reply));
+    redisClient.quit();
+  });
+}
+
+function _tweetsLoaded(res, locale, config, tweets) {
+  res.render('index', { otherLocale: _otherLocale(locale), config: config, tweets: tweets });
 }
 
 function _otherLocale(locale) {

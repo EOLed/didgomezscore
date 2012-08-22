@@ -45,9 +45,8 @@ block content
 
   include includes/ads      
 
-  .container
-    .row
-      h2.span12 #{__i('Anticipation...')}
+  if tweets != null
+    include includes/anticipation
 
   script(type='text/javascript', src='/javascripts/jquery.countdown.min.js')
   script(type='text/javascript', src='/javascripts/jshashtable-2.1.js')
