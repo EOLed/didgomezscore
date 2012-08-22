@@ -1,12 +1,12 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
+  "name": "didgomezscore",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "start": "node app"
   },
   "dependencies": {
-    "express": "3.0.0rc2",
+    "express": "3.x.x",
     "jade": "*",
     "i18n": "*",
     "redis": "*"
