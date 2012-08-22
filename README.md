@@ -32,5 +32,6 @@ The goal of this node.js rewrite, personally, is to:
 
 ##Roadmap
 
-The [2.0.0](http://semver.org) milestone is to simply port the existing PHP webapp into a node.js webapp. Any
-plans for new functionality will be placed in the 2.1.0 milestone.
+The [2.0.0 milestone](https://github.com/achan/didgomezscore/issues/milestones) is to simply
+port the existing PHP webapp into a node.js webapp. Any plans for new functionality will be 
+placed in the 2.1.0 milestone.
