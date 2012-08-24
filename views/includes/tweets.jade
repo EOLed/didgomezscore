@@ -1,6 +1,6 @@
 .container
   .row
-    h2.span12 #{__i('Anticipation...')}
+    h2.span12 #{config.scored == true ? __i('Congrats Gomez!!!') : __i('Anticipation...')}
     .row.tweets
       for tweet in tweets.results
         .span4.blue.tweet
@@ -8,6 +8,6 @@
             .span1.tweet-pic
               img(src=tweet.profile_image_url)
             .span3.tweet-desc
-              span.tweet-user #{tweet.from_user_name}
-              span.tweet-username #{tweet.from_user}
+              span.tweet-user #{tweet.from_user_name + ' '}
+              span.tweet-username @#{tweet.from_user}
               p.tweet-text #{tweet.text}

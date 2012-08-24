@@ -6,12 +6,18 @@ block content
   .container
     .row
       .span12
-        h1 #{__i('Did Scott Gomez Score Last Game?') + ' '}
+        h1
+          if config.scored == 'shutout'
+            span!= __i('Did The Habs Score Last Game?') + ' '
+          else
+            span!= __i('Did Scott Gomez Score Last Game?') + ' '
           small#now
             a#locale-switcher.header-link(href='/#{otherLocale}') #{__i('Et pis maintenant?')}
     .row
-      .span8.answer.didnt-score #{__i('No.')}
-      #countup.span4
+      block jumbotron
+    .row
+      #more.span12
+        block more
     .row.social
       #social-facebook.span8
         .fb-like(data-href='http://didgomezscore.com', data-send='true', data-width='620', 
@@ -31,22 +37,23 @@ block content
             }
           } (document,"script","twitter-wjs");
 
-  include includes/ads      
+  if config.scored != true
+    include includes/ads      
 
-  .container
-    .row
-      h2.span12 #{__i('Reminiscing...')}
-    .row
-      #last-goal-description.span12 #{__i('last.goal.desc')}
-    .row
-      #last-goal-showcase.span12
-        iframe(id='last-goal-youtube', align='center', width='100%', height='480',
-          src='http://www.youtube.com/embed/C6Rf3QxAK8E?rel=0', frameborder='0', allowfullscreen)
+    .container
+      .row
+        h2.span12 #{__i('Reminiscing...')}
+      .row
+        #last-goal-description.span12 #{__i('last.goal.desc')}
+      .row
+        #last-goal-showcase.span12
+          iframe(id='last-goal-youtube', align='center', width='100%', height='480',
+            src='http://www.youtube.com/embed/C6Rf3QxAK8E?rel=0', frameborder='0', allowfullscreen)
 
   include includes/ads      
 
   if tweets != null
-    include includes/anticipation
+    include includes/tweets
 
   script(type='text/javascript', src='/javascripts/jquery.countdown.min.js')
   script(type='text/javascript', src='/javascripts/jshashtable-2.1.js')

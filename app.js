@@ -50,7 +50,6 @@ http.createServer(app).listen(app.get('port'), function(){
       });
 
       res.on('end', function() {
-        console.log('data: ' + data);
         var redis = require('redis');
         var redisClient = redis.createClient();
         redisClient.on('error', function (err) {

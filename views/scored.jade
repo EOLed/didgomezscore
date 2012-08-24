@@ -1,0 +1,10 @@
+extends result
+
+block scripts
+  script(type='text/javascript', src='/javascripts/jquery.snowfall.min.js')
+
+block jumbotron
+  #congrats.span4
+    a(href='http://imgur.com/YZPS5', title='imgur.com')
+      img(src='http://imgur.com/YZPS5.gif')
+  .span8.answer.scored #{__i('Yes!')}

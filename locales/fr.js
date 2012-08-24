@@ -13,5 +13,6 @@
 	"last.goal.desc": "Le 17 f&eacute;vrier, Scott Gomez a doubl&eacute; son nombre de buts total de la saison en avantage num&eacute;rique &agrave; la fin de la premi&egrave;re p&eacute;riode.",
 	"Anticipation...": "Anticipation...",
   "countup.prefix": "Seulement {d<}{dn} {dl},{d>} {hn} {hl}, {mn} {ml} et {sn} {sl} {desc}",
-  "countup.suffix": "depuis le dernier but de <span id=\"name\">Gomez</span>..."
+  "countup.suffix": "depuis le dernier but de <span id=\"name\">Gomez</span>...",
+  "more.shootout": "S'cuse Gomez, mais les tirs de barrage comptent pas :("
 }

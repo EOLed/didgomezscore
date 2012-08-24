@@ -80,7 +80,16 @@ function _configLoaded(res, locale, config) {
 }
 
 function _tweetsLoaded(res, locale, config, tweets) {
-  res.render('index', { otherLocale: _otherLocale(locale), config: config, tweets: tweets });
+  var view = 'no';
+  if (config.scored == 'shutout' || config.scored == 'shootout') {
+    view = config.scored;
+  } else if (config.scored == true) {
+    view = 'scored';
+  }
+  
+  console.log('render view: ' + view);
+
+  res.render(view, { otherLocale: _otherLocale(locale), config: config, tweets: tweets });
 }
 
 function _otherLocale(locale) {
