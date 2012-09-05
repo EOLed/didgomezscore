@@ -27,6 +27,42 @@ exports.locale = function(req, res) {
   _loadConfig(res, locale, _configLoaded);
 };
 
+exports.admin = function(req, res) {
+  res.render('admin');
+}
+
+exports.updateStatus = function(req, res) {
+  var redis = require('redis');
+  var redisClient = redis.createClient();
+  redisClient.on('error', function (err) {
+    console.error('There was an Error ' + err);
+  });
+
+  redisClient.get('dgs:config:pw', function(err, reply) {
+    _verifyPassword(req, res, reply);
+    redisClient.quit();
+  });
+}
+
+function _verifyPassword(req, res, reply) {
+  var crypto = require('crypto');
+  var pw = crypto.createHash('md5').update(req.body.pw).digest("hex");
+  if (pw == reply) {
+    var redis = require('redis');
+    var redisClient = redis.createClient();
+    redisClient.on('error', function (err) {
+      console.error('There was an Error ' + err);
+    });
+
+    redisClient.set('dgs:config:scored', req.body.scored, function() {
+      redisClient.quit();
+      res.redirect('/');
+    });
+  } else {
+    res.redirect('/');
+  }
+}
+
 function _loadConfig(res, locale, callback) {
   var ads = true, scored = false;
 
@@ -87,8 +123,6 @@ function _tweetsLoaded(res, locale, config, tweets) {
     view = 'scored';
   }
   
-  console.log('render view: ' + view);
-
   res.render(view, { otherLocale: _otherLocale(locale), config: config, tweets: tweets });
 }
 

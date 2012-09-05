@@ -32,7 +32,9 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/admin', routes.admin);
 app.get('/:locale', routes.locale);
+app.post('/admin', routes.updateStatus);
 
 app.locals({
   __i: i18n.__,
