@@ -1,2 +1,2 @@
 redis-server &
-node app.js
+forever app.js &
