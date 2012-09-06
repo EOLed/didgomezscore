@@ -54,13 +54,16 @@ http.createServer(app).listen(app.get('port'), function(){
       res.on('end', function() {
         var redis = require('redis');
         var redisClient = redis.createClient();
-        redisClient.on('error', function (err) {
-          console.error('There was an Error ' + err);
+
+        redisClient.on('connect', function() {
+          redisClient.set('dgs:tweets', data, redis.print);
+          redisClient.quit(function(err, res) {
+            console.log('closing redis client.');
+          });
         });
 
-        redisClient.set('dgs:tweets', data, redis.print);
-        redisClient.quit(function(err, res) {
-          console.log('closing redis client.');
+        redisClient.on('error', function (err) {
+          console.error('Error occurred trying to retrieve tweets: ' + err);
         });
       });
     });

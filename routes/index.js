@@ -36,11 +36,14 @@ exports.updateStatus = function(req, res) {
   var redisClient = redis.createClient();
   redisClient.on('error', function (err) {
     console.error('There was an Error ' + err);
+    res.redirect('/');
   });
 
-  redisClient.get('dgs:config:pw', function(err, reply) {
-    _verifyPassword(req, res, reply);
-    redisClient.quit();
+  redisClient.on('connect', function() {
+    redisClient.get('dgs:config:pw', function(err, reply) {
+      redisClient.quit();
+      _verifyPassword(req, res, reply);
+    });
   });
 }
 
@@ -50,13 +53,17 @@ function _verifyPassword(req, res, reply) {
   if (pw == reply) {
     var redis = require('redis');
     var redisClient = redis.createClient();
+
     redisClient.on('error', function (err) {
-      console.error('There was an Error ' + err);
+      res.redirect('/');
     });
 
-    redisClient.set('dgs:config:scored', req.body.scored, function() {
-      redisClient.quit();
-      res.redirect('/');
+    redisClient.on('connect', function() {
+      redisClient.set('dgs:config:scored', req.body.scored, function() {
+        console.log('setting scored to: ' + req.body.scored);
+        redisClient.quit();
+        res.redirect('/');
+      });
     });
   } else {
     res.redirect('/');
@@ -68,58 +75,57 @@ function _loadConfig(res, locale, callback) {
 
   var redis = require('redis');
   var redisClient = redis.createClient();
+  
+  redisClient.on('connect', function() {
+    var multi = redisClient.multi();
+
+    multi.get('dgs:config:ads', function (err, reply) {
+      if (err) console.log('error occurred: ' + err); return;
+    });
+
+    multi.get('dgs:config:scored', function (err, reply) {
+      if (err) console.log('error occurred: ' + err); return;
+    });
+
+    multi.exec(function (err, replies) {
+      redisClient.quit();
+      replies[0] = replies[0] === 'true';
+
+      if (replies[1] == 'true' || replies[1] == 'false') {
+        replies[1] = replies[1] === 'true';
+      }
+
+      callback(res, locale, { ads: replies[0], scored: replies[1] });
+    });
+  });
+  
   redisClient.on('error', function (err) {
-    console.error('There was an Error ' + err);
-  });
-
-  var multi = redisClient.multi();
-
-  multi.get('dgs:config:ads', function (err, reply) {
-    if (err) return;
-
-    ads = reply == 'true' ? true : false;
-  });
-
-  multi.get('dgs:config:scored', function (err, reply) {
-    if (err) return;
-
-    if (reply == 'true') {
-      reply = true;
-    } else if (reply == 'false') {
-      reply = false;
-    }
-
-    scored = reply;
-  });
-
-  multi.exec(function (err, replies) {
-    var config = { scored: scored, ads: ads };
-    console.log(config);
-    callback(res, locale, config);
-
-    if (err) return;
-    redisClient.quit();
+    callback(res, locale, { scored: scored, ads: ads });
   });
 }
 
 function _configLoaded(res, locale, config) {
   var redis = require('redis');
   var redisClient = redis.createClient();
-  redisClient.on('error', function (err) {
-    console.error('There was an Error ' + err);
+  
+  redisClient.on('connect', function() {
+    redisClient.get('dgs:tweets', function(err, reply) {
+      redisClient.quit();
+      _tweetsLoaded(res, locale, config, JSON.parse(reply));
+    });
   });
-
-  redisClient.get('dgs:tweets', function(err, reply) {
-    _tweetsLoaded(res, locale, config, JSON.parse(reply));
-    redisClient.quit();
+  
+  redisClient.on('error', function(err) {
+    _tweetsLoaded(res, locale, config, null);
   });
 }
 
 function _tweetsLoaded(res, locale, config, tweets) {
   var view = 'no';
+
   if (config.scored == 'shutout' || config.scored == 'shootout') {
     view = config.scored;
-  } else if (config.scored == true) {
+  } else if (config.scored === true) {
     view = 'scored';
   }
   
