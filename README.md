@@ -1,8 +1,5 @@
-BETA: Did Gomez Score?
-======================
-
-*Development is still in progress. Until the 2.0.0 milestone has been marked completed, don't
-expect a stable webapp.*
+Did Gomez Score?
+================
 
 This is a node.js rewrite of the mildly popular website
 [didgomezscore.com](http://didgomezscore.com). DGS strives to maintain its position as the
@@ -32,6 +29,6 @@ The goal of this node.js rewrite, personally, is to:
 
 ##Roadmap
 
-The [2.0.0 milestone](https://github.com/achan/didgomezscore/issues/milestones) is to simply
-port the existing PHP webapp into a node.js webapp. Any plans for new functionality will be 
-placed in the 2.1.0 milestone.
+The 2.0.0 [milestone](https://github.com/achan/didgomezscore/issues/milestones) was to simply
+port the existing PHP webapp into a node.js webapp. Any plans for new functionality was placed
+in the 2.1.0 milestone.
