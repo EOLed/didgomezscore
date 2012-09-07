@@ -1,6 +1,6 @@
 DATE=$(shell date +%I:%M%p)
 STYLESHEETS = ./public/stylesheets
-SASS = ${STYLESHEETS}/sass
+SASS = ./sass
 TMP = ./tmp
 HR=\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
 CHECK=\033[32m✔\033[39m
