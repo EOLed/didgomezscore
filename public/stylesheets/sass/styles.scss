@@ -1,0 +1,238 @@
+@import "variables";
+
+.new-section-base {
+  text-align: center;
+  width: 100%;
+}
+
+.new-section {
+  @extend .new-section-base;
+  @include new-section-habs;
+}
+
+#congrats {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.ads {
+  overflow: hidden;
+}
+
+.social {
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#locale-switcher {
+  white-space: nowrap;
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 48px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading-font;
+}
+
+a, a:hover, a:visited {
+  color: $secondaryColor;
+}
+
+body {
+  @include content-font;
+  color: $tertiaryColor;
+  background-color: $primaryColor;
+}
+
+#countup {
+  @include heading-font;
+  text-transform: lowercase;
+  font-size: 36px;
+  padding-top: 60px;
+  line-height: normal;
+}
+
+#countup:first-letter {
+  text-transform: uppercase;
+}
+
+#name {
+  text-transform: capitalize;
+}
+
+#last-goal-showcase {
+  text-align: center;
+}
+
+#last-goal-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.tweet {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: $secondaryColor;
+}
+
+@media (max-width: 480px) {
+  #congrats {
+    margin-top: 20px;
+  }
+
+  .scored {
+    font-size: 180px;
+  }
+
+  #countup {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .tweet div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .tweet-pic {
+    padding-top: 10px;
+  }
+
+  .tweet-desc {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .answer {
+    -webkit-text-stroke: 7px $secondaryColor; 
+    font-size: 200px;
+  }
+
+  .scored {
+    -webkit-text-stroke: 5px $secondaryColor; 
+    font-size: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  #congrats {
+    margin-top: 20px;
+  }
+
+  #countup {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .tweet div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .tweet-pic {
+    padding-top: 10px;
+  }
+
+  .tweet-desc {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .answer {
+    -webkit-text-stroke: 7px $secondaryColor; 
+    font-size: 160px;
+  }
+
+  .scored {
+    -webkit-text-stroke: 5px $secondaryColor; 
+    font-size: 120px;
+  }
+
+  #countup {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+  #congrats {
+    margin-top: 20px;
+  }
+
+  #countup {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .answer {
+    -webkit-text-stroke: 7px $secondaryColor; 
+    font-size: 230px;
+  }
+
+  .scored {
+    font-size: 215px;
+  }
+}
+
+@media (min-width: 980px) {
+}
+
+@media (min-width: 1200px) {
+  #congrats {
+    margin-top: 60px;
+  }
+
+  .answer {
+    font-size: 330px;
+  }
+  
+  .scored {
+    font-size: 300px;
+  }
+}
+
+.tweet-pic {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.tweeter {
+}
+
+.tweet-desc {
+  @include content-font;
+  margin: 10px;
+}
+
+.tweet-user {
+}
+
+.tweet-username {
+}
+
+.tweet-text {
+  @include content-font;
+}
+
+#footer, #footer a, #footer a:hover, #footer a:visited {
+  color: #cc253f;
+  text-shadow: 0px 2px 3px #8a061b;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+#more {
+  @include heading-font;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

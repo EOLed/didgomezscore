@@ -6,8 +6,8 @@ html
     link(rel='shortcut icon', href='/images/dgs.ico', type='image/x-icon')
     link(rel='stylesheet', href='/stylesheets/bootstrap.css', type='text/css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.css', type='text/css')
-    link(rel='stylesheet', href='/stylesheets/styles.css', type='text/css')
-    link(rel='stylesheet', href='/stylesheets/styles-' + (otherLocale == 'en' ? 'fr' : 'en') + '.css',
+    link(rel='stylesheet', href='/stylesheets/styles.min.css', type='text/css')
+    link(rel='stylesheet', href='/stylesheets/styles-' + (otherLocale == 'en' ? 'fr' : 'en') + '.min.css',
       type='text/css')
     link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Patua+One', type='text/css')
     block css
@@ -23,7 +23,7 @@ html
     meta(property='og:description', content='Did Scott Gomez score last game? Find out now!')
     block scripts
     script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
-  body(class='red')
+  body
     block content
     #fb-root
       script(type='text/javascript')

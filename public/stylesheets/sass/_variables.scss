@@ -1,0 +1,26 @@
+$primaryColor: #b1001c;
+$secondaryColor: #011e62;
+$tertiaryColor: #fff;
+
+@mixin new-section-habs {
+  margin: 100px 0;
+  background-color: $secondaryColor;
+  border-color: $tertiaryColor; 
+  border-style: solid;
+  border-width: 50px 0;
+  padding-top: 10px;
+  padding-bottom: 60px;
+  display: block;
+  height: 200px;
+}
+
+@mixin heading-font {
+  font-family: 'Patua One', 'Arial', sans-serif;
+  font-weight: 400; 
+  color: $tertiaryColor;
+}
+
+@mixin content-font {
+  font-family: sans-serif;
+}
+
