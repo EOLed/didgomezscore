@@ -1,7 +1,7 @@
 {
 	"Did Scott Gomez Score Last Game?": "Did Scott Gomez Score Last Game?",
 	"Did The Habs Score Last Game?": "Did <span style=\"text-decoration: line-through\">Scott Gomez</span> The Habs Score Last Game?",
-	"Et pis maintenant?": "Et pis maintenant?",
+	"Et pis maintenant?": "How about now?",
 	"Yes!": "Yes!",
 	"No.": "No.",
 	"Show Me the Money...": "Show Me the Money...",
