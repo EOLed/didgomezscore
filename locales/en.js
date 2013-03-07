@@ -7,7 +7,7 @@
 	"Show Me the Money...": "Show Me the Money...",
 	"salary %s": "Scott Gomez has been paid %s by the Montreal Canadiens since hist last goal.",
 	"too much": "too much",
-	"Congrats Gomez!!!": "Congrats Gomez!!!",
+	"Congrats Gomez!!!": "R.I.P. #DidGomezScore...",
 	"salary.format": "$##,###,###.00 USD",
 	"Reminiscing...": "Reminiscing...",
 	"last.goal.desc": "On February 17, Scott Gomez doubles his season goal total with a powerplay marker near the end of the first period.",

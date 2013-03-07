@@ -123,13 +123,13 @@ function _configLoaded(res, locale, config) {
 }
 
 function _tweetsLoaded(res, locale, config, tweets) {
-  var view = 'no';
+  var view = 'rip';
 
-  if (config.scored == 'shutout' || config.scored == 'shootout') {
+  /*if (config.scored == 'shutout' || config.scored == 'shootout') {
     view = config.scored;
   } else if (config.scored === true) {
     view = 'scored';
-  }
+  }*/
   
   res.render(view, { otherLocale: _otherLocale(locale), config: config, tweets: tweets });
 }
